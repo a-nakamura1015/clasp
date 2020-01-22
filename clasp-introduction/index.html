@@ -1,0 +1,100 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>claspでGASのローカル開発してみよう</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="clasp-introduction"
+                  title="claspでGASのローカル開発してみよう"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="claspとは" duration="1">
+        <p>Google Apps Script は Google が提供しているスクリプトエディタでコーディングすることができます。Google Chrome があれば実装をすることができるのが Google Apps Script の強みではあるのですが、その反面「好きなエディタで実装することができない！」や「Git で管理することができない！」といった問題があります。</p>
+<p>Google はこれらの問題を提供する clasp というツールを提供しています。</p>
+<p>この clasp を利用すると Google Apps Script をローカルの好きなエディタで実装することができます。</p>
+<p>ローカルに開発環境を整備しなければなりませんが、Google Apps Script でチーム開発をする場合は必須と言っても過言ではありません。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="前準備" duration="30">
+        <h2 is-upgraded>npmでclaspをインストールしましょう</h2>
+<p>clasp はnpmでインストールすることができるので、まずはNode.jsとnpmがインストールされているかを下記のコマンドで確認しましょう。</p>
+<p>もし、それぞれのバージョンが表示されなかった場合は、インストールされていない状態なのでインストールをしてください。</p>
+<pre>$ node -v
+v12.14.1
+$ npm -v
+6.13.4</pre>
+<p>Node.js と npm がインストールされていましたら、下記のコマンドで clasp をインストールしましょう。</p>
+<pre>$ npm install @google/clasp -g</pre>
+<h2 is-upgraded>Google Apps Script API を有効化しましょう</h2>
+<p>実は clasp をインストールしても、Google アカウントの設定で Google Apps Script APIを有効にしなければ clasp を利用することはできません。</p>
+<p>下記リンク先で Google Apps Script を有効化することができます。</p>
+<p><a href="https://script.google.com/home/usersettings" target="_blank">https://script.google.com/home/usersettings</a></p>
+<p>設定画面の「Google Apps Script API 」の下に「オフ」と表示されていると、</p>
+<p>Google Apps Script API が無効化の状態になっています。</p>
+<p>「Google Apps Script API 」をクリックしますと、「オン」「オフ」を切り替える画面に遷移します。</p>
+<p class="image-container"><img style="width: 602.00px" src="img/b95fe836cb8d360c.png"></p>
+<p>遷移先の画面で右端にトグルボタン表示されていますので、</p>
+<p>こちらをクリックして左端の文字が「オフ」から「オン」に変われば設定完了です。</p>
+<p class="image-container"><img style="width: 602.00px" src="img/7a335b528333b4dc.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="実際に使ってみよう" duration="5">
+        <p>それでは早速 clasp を使ってみましょう！</p>
+<p>clasp を利用するには下記のコマンドでログインする必要があります。</p>
+<pre>$ clasp login
+🔑 Authorize clasp by visiting this url:
+https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&amp;scope=https%3A%2F%2Fwww.googleapis.com...</pre>
+<p>コマンドを実行すると Google Chrome が起動し、ログインするアカウントを選択するように求められます。</p>
+<p>アカウントを選択すると下記の画面が表示されるので、画面最下部の[許可]ボタンをクリックしてください。</p>
+<p class="image-container"><img style="width: 602.00px" src="img/e4e045cd2e61f9c8.png"></p>
+<p>コンソール上に下記のようなメッセージが表示されましたらログイン成功です。</p>
+<pre>Default credentials saved to: ~/.clasprc.json (/Users/XXXX/.clasprc.json).</pre>
+<p>別のアカウントに切り替えたいなどの理由でログアウトしたい場合は下記のコマンドでログアウトすることができます。</p>
+<pre>$ clasp logout</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="最後" duration="0">
+        <p>これでローカルで Google Apps Script の実装ができるようになりました！</p>
+<h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>clasp を使うことで、ローカルで Google Apps Script の実装ができる</li>
+<li>Google Apps Script のソースを GitHubで管理することができる</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

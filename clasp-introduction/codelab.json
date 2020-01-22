@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-01-22T03:13:59Z",
+  "id": "clasp-introduction",
+  "duration": 36,
+  "title": "claspでGASのローカル開発してみよう",
+  "authors": "a-nakamura1015",
+  "summary": "claspのハンズオンです。",
+  "source": "13_r79UvvY-ojAhObVwC58dZI8XkmJZx9wg5bhA49k-w",
+  "theme": "googleappsscript",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "GoogleAppsScript"
+  ],
+  "tags": [],
+  "url": "clasp-introduction"
+}
